@@ -1,0 +1,17 @@
+@use '../abstract/mixins';
+@use '../abstract/variaveis';
+
+li {
+    transition: 0.3s;
+    @include mixins.line-bottom(transparent);
+    
+}
+
+li:hover {
+    cursor: pointer;
+    @include mixins.line-bottom(variaveis.$cor-blue)
+}
+
+.bg-size-button{
+    @include mixins.bg('../../assets/img/search.svg', center, 40%);
+}

@@ -1,0 +1,10 @@
+@mixin line-bottom($color){
+        border-bottom: 1px solid $color;
+}
+
+@mixin bg($diretorio, $position, $width){
+    background-image: url($diretorio);
+    background-repeat: no-repeat;
+    background-position: $position;
+    background-size: $width;
+}

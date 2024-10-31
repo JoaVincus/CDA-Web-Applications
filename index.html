@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDA - Aplicações</title>
+    <link rel="shortcut icon" type="png" href="./assets/img/logomarca.png">
+    <link rel="stylesheet" href="./assets/styles/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        azul:{
+                            claro: '#C5DFFF',
+                            escuro: '#00346F',
+                            hover: '#1057B0'
+                        },
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header class="flex my-5">
+        <div class="flex">
+            <img class="my-1 left-8 absolute" width="100" src="./assets/img/logo_cdadistribuidora.png" alt="Logo da CDA-Distribuidora">
+        </div>
+
+        <div class="flex justify-center">
+            <nav class="my--5 text-mg text-azul-escuro ml-48 p-2">
+                <ul class="flex gap-10 justify-center items-center">
+                    <li>INTRANET</li>
+                    <li>APEX</li>
+                    <li>INTERNET</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+
+    <div class="flex justify-center my-14">
+        <label class="text-sm font-bold text-gray-700" for="search"></label>
+        <input class="text-sm py-3 shadow w-3/6 pl-4 focus:outline-none rounded border hover:border-azul-claro hover:ring-1 hover:ring-azul-escuro focus:border-azul-escuro focus:ring-1 focus:ring-azul-escuro rounded-tl-lg rounded-bl-lg" id="search" type="text" placeholder="Digite a aplicação desejada"> 
+        <button class="bg-size-button text-azul-escuro w-16 border border-azul-escuro bg-azul-escuro hover:text-white duration-300 rounded-tr-lg rounded-br-lg" type="button"></button>
+    </div>
+
+    <main class="aplicacoes">
+        <section class="cards" id="apex"></section>
+        <section class="cards" id="grafana"><section>
+        <section class="cards" id="oxar"></section>
+    </main>
+
+    
+</body>
+</html>

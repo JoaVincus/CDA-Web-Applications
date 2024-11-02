@@ -1,20 +1,18 @@
+@charset "UTF-8";
 body {
-  background: linear-gradient(180deg, #fcfcfc 0%, #fcfbfb 100%);
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0;
   padding: 0;
-  width: 100%;
-  height: 100vh;
   box-sizing: border-box;
 }
 
-li {
+nav li {
   transition: 0.3s;
   border-bottom: 1px solid transparent;
 }
 
-li:hover {
+nav li:hover {
   cursor: pointer;
   border-bottom: 1px solid #20376C;
 }
@@ -24,4 +22,152 @@ li:hover {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 40%;
+}
+
+.intranet {
+  gap: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.intranet .opções .opções__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intranet .opções .opções__botão:checked ~ .lista-menu {
+  display: block;
+}
+
+.list {
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 5px 0px;
+}
+.list:hover {
+  color: white;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin: 80px 50px -30px 50px;
+}
+@media screen and (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+  }
+}
+.cards h3 {
+  font-size: 1rem;
+  margin: 20px 0px;
+}
+.cards span, .cards ul {
+  font-size: 16px;
+  max-width: 300px;
+}
+.cards span {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+.cards ul {
+  transition: 0.3s ease-in-out;
+  height: 10px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.cards.cards:has(.card:hover) .card:not(:hover) {
+  opacity: 0.8;
+  scale: 0.97;
+}
+.cards .card.apex .icon {
+  background-image: url(../img/oracle-apex-logo.png);
+  background-size: 90%;
+}
+.cards .card.apex:hover .icon {
+  background-color: #00346F;
+}
+.cards .card.oxar .icon {
+  background-image: url(../img/oxar.png);
+}
+.cards .card.oxar:hover .icon {
+  background-color: #008F20;
+}
+.cards .card.grafana .icon {
+  background-image: url(../img/grafana_icon.svg);
+  background-size: 50%;
+}
+.cards .card.grafana:hover .icon {
+  background-color: #FF0013;
+}
+.cards .card {
+  border: 1px solid #ccc;
+  transition: 0.4s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 15px;
+  min-height: 370px;
+  min-width: 380px;
+}
+.cards .card .card-title {
+  min-width: 300px;
+}
+.cards .card .icon {
+  transition: 0.3s ease-in-out;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 10px;
+  border: solid 1px #ccc;
+  border-radius: 10px;
+  min-height: 80px;
+  width: 80px;
+}
+.cards .card .button {
+  opacity: 0.9;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  border: 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 70%;
+  cursor: pointer;
+  font-size: 80%;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+.cards .card:hover {
+  transform: scale(103%);
+  background-color: #eee;
+}
+.cards .card:hover .card-title {
+  font-weight: 500;
+  scale: 1.1;
+}
+.cards .card:hover ul {
+  scale: 1.1;
+}
+.cards .card:hover .button.apex {
+  color: white;
+  background-color: #00346F;
+}
+.cards .card:hover .card.apex:hover .icon {
+  background-color: #00346F;
+}
+.cards .card:hover .button.oxar {
+  color: white;
+  background-color: #008F20;
+}
+.cards .card:hover .button.grafana {
+  color: white;
+  background-color: #FF0013;
 }/*# sourceMappingURL=styles.css.map */

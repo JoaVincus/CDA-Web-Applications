@@ -8,3 +8,14 @@
     background-position: $position;
     background-size: $width;
 }
+
+@mixin flex($justify-content, $align-items){
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin hover-button($background-button){
+    color: white;
+    background-color: $background-button;
+}

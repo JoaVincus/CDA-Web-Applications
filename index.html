@@ -17,6 +17,8 @@
                             escuro: '#00346F',
                             hover: '#1057B0'
                         },
+                        verde: '#259F3F',
+                        amarelho: '#FFCC00',
                     },
                     fontFamily: {
                         inter: ['Inter', 'sans-serif']
@@ -28,19 +30,35 @@
 </head>
 
 <body>
-    <header class="flex my-5">
+    <header class="flex justify-between sticky top-0 p-4 bg-white z-0">
         <div class="flex">
-            <img class="my-1 left-8 absolute" width="100" src="./assets/img/logo_cdadistribuidora.png" alt="Logo da CDA-Distribuidora">
+            <img class=" left-8 absolute" width="100" src="./assets/img/logo_cdadistribuidora.png" alt="Logo da CDA-Distribuidora">
         </div>
 
-        <div class="flex justify-center">
-            <nav class="my--5 text-mg text-azul-escuro ml-48 p-2">
+        <div class="flex">
+            <nav class="my--5 text-mg text-azul-escuro">
                 <ul class="flex gap-10 justify-center items-center">
                     <li>INTRANET</li>
                     <li>APEX</li>
                     <li>INTERNET</li>
                 </ul>
             </nav>
+        </div>
+        <div class="mr-10">
+            <div class="intranet absolute right-10">
+                <ul class="opções w-32">
+                    <input type="checkbox" id="opções-menu" class="opções__botão hidden">
+                    <label for="opções-menu" class="opções__rotulo">
+                        <li class="opções__item cursor-pointer uppercase mb-1 p-1">
+                            Suporte
+                        </li>
+                    </label>
+                    <ul class="text-center lista-menu hidden ">
+                        <li class="list hover:bg-verde">Zendesk</li>
+                        <li class="list hover:bg-amarelho">Documentação</li>
+                    </ul>
+                </ul>
+            </div>
         </div>
     </header>
 
@@ -53,9 +71,119 @@
     </div>
 
     <main class="aplicacoes">
-        <section class="cards" id="apex"></section>
+
+        <section class="cards">
+            
+            <div class="card apex">
+                <div class="icon"></div>
+                <h3 class="card-title apex">APEX - Apoio Operacional</h3>
+                <a class="button apex" href="http://192.168.1.91:8080/ords/f?p=127:LOGIN_DESKTOP:14419115950046:::::">Acessar</a>
+                <span>Para a utilização e demandas do setor apoio operacional</span>
+                <ul>
+                    <li>Apoio Operacional</li>
+                    <li>Intranet</li>
+                </ul>
+            </div>
+
+            <div class="card apex">
+                <div class="icon"></div>
+                <h3 class="card-title apex">APEX - Controladoria</h3>
+                <a class="button apex" href="http://192.168.1.91:8080/ords/f?p=105:13:7627758951975:::::">Acessar</a>
+                <span>Para a utilização e demandas do setor controladoria</span>
+                <ul>
+                    <li>Controladoria</li>
+                    <li>Intranet</li>
+                </ul>
+            </div>
+
+            <div class="card apex">
+                <div class="icon"></div>
+                <h3 class="card-title apex">APEX - Frota</h3>
+                <a class="button apex" href="http://192.168.1.91:8080/ords/f?p=103:1:10486018797972:::::">Acessar</a>
+                <span>Para a utilização e demandas do setor frota</span>
+                <ul>
+                    <li>Logística</li>
+                    <li>Intranet</li>
+                </ul>
+            </div>
+            
+            <div class="card apex">
+                <div class="icon"></div>
+                <h3 class="card-title apex">APEX - Logística WMS</h3>
+                <a class="button apex" href="http://192.168.1.91:8080/ords/f?p=201:LOGIN_DESKTOP:4749278614831:::::">Acessar</a>
+                <span>Para a utilização e demandas do setor logística</span>
+                <ul>
+                    <li>Logística</li>
+                    <li>Intranet</li>
+                </ul>
+            </div>
+
+        </section>
+
+        <section class="cards">
+            <div class="card oxar">
+               <div class="icon"></div>
+               <h3 class="card-title oxar">OXAR - Agendamento</h3>
+               <a class="button oxar" href="https://oxar.appetiteapex.com/ords/f?p=202:LOGIN_DESKTOP:8253593899961:::::">Acessar</a>
+               <span>Possui relatórios de agendamento para o recebimento</span>
+               <ul>
+                   <li>Apoio Operacional</li>
+                   <li>Intranet</li>
+               </ul>
+           </div>
+            <div class="card oxar">
+               <div class="icon"></div>
+               <h3 class="card-title oxar">OXAR - Agendador de Recebimentos</h3>
+               <a class="button oxar" href="https://oxar.appetiteapex.com/ords/f?p=139:1:23506254303631:::::">Acessar</a>
+               <span>Onde é possível agendar o recebimento de mercadorias</span>
+               <ul>
+                   <li>Apoio Operacional</li>
+                   <li>Intranet</li>
+               </ul>
+           </div>
+
+           <div class="card oxar">
+               <div class="icon"></div>
+               <h3 class="card-title oxar">OXAR - Solicitação de preço</h3>
+               <a class="button oxar" href="https://oxar.appetiteapex.com/ords/f?p=110:LOGIN_DESKTOP:436864455025:::::">Acessar</a>
+               <span>Utilizado pelos supervisores para solicitar mudança de preços ao comercial</span>
+               <ul>
+                   <li>Apoio Operacional</li>
+                   <li>Intranet</li>
+               </ul>
+           </div>
+
+           </section>
+
+       <section class="cards">
+           
+           <div class="card grafana">
+               <div class="icon"></div>
+               <h3 class="card-title grafana">Grafana - Faturamento</h3>
+               <a class="button grafana" href="http://192.168.1.55:3000/d/uju5z4qmk/ds-cda-faturamento?orgId=1&refresh=5s">Acessar</a>
+               <span>Grafana com as informações do faturamento</span>
+               <ul>
+                   <li>Faturamento</li>
+                   <li>Intranet</li>
+               </ul>
+           </div>
+
+           <div class="card grafana">
+               <div class="icon"></div>
+               <h3 class="card-title grafana">Grafana - Comercial</h3>
+               <a class="button grafana" href="http://192.168.1.55:3000/d/GlKtcHWWk/ds-comercial?orgId=1&refresh=1m">Acessar</a>
+               <span>Grafana pertencente ao comercial</span>
+               <ul>
+                   <li>Comercial</li>
+                   <li>Intranet</li>
+               </ul>
+           </div>
+       </section>
+
+        
+        <!-- <section class="cards" id="apex"></section>
         <section class="cards" id="grafana"><section>
-        <section class="cards" id="oxar"></section>
+        <section class="cards" id="oxar"></section> -->
     </main>
 
     

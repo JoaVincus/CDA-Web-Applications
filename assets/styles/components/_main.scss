@@ -1,0 +1,140 @@
+@use '../abstract/mixins';
+@use '../abstract/variaveis';
+
+.cards{
+    @include mixins.flex(center, center);
+    flex-wrap: wrap;
+    gap: 22px;
+    margin: 80px 50px -30px 50px;
+
+    @media screen and (max-width: 768px) {flex-direction: column;}
+
+    h3{
+        font-size: 1rem;
+        margin: 20px 0px;
+    }
+
+    span, ul{
+    font-size: 16px;
+    max-width: 300px;
+    }
+
+    span{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 1rem;
+    }
+
+    ul{
+        transition: 0.3s ease-in-out;
+        height: 10px;
+        font-weight: 400;
+        margin-bottom: 20px;
+    }    
+
+    &.cards:has(.card:hover) .card:not(:hover){
+        opacity: .8;
+        scale: .97;
+    }
+
+    // Apex
+    .card.apex .icon{
+        background-image: url(../img/oracle-apex-logo.png);
+        background-size: 90%;
+    }
+
+    .card.apex:hover .icon{
+        background-color: variaveis.$text-color-blue;
+    }
+
+    // Oxar 
+    .card.oxar .icon{
+        background-image: url(../img/oxar.png);
+    }
+    
+    .card.oxar:hover .icon{
+        background-color: variaveis.$text-color-green;
+    }
+
+    // Grafana
+    .card.grafana .icon{
+        background-image: url(../img/grafana_icon.svg);
+        background-size: 50%;
+    }
+    
+    .card.grafana:hover .icon{
+        background-color: variaveis.$text-color-red;
+    }
+    
+    .card{
+        border: 1px solid #ccc;
+        transition: 0.4s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1.5rem;
+        border-radius: 15px;
+        min-height: 370px; 
+        min-width: 380px;
+
+
+        .card-title{min-width: 300px;}
+
+        .icon{
+            transition: 0.3s ease-in-out;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 10px;
+            border: solid 1px #ccc;
+            border-radius: 10px;
+            min-height: 80px;
+            width: 80px;
+        }
+
+        .button{
+            opacity: 0.9;
+            padding: 0.5rem 1rem;
+            text-transform: uppercase;
+            border: 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 70%;
+            cursor: pointer;
+            font-size: 80%;
+            font-weight: 500;
+            transition: 0.3s ease;
+        }
+        
+        &:hover{
+            transform: scale(103%);
+            background-color: #eee;
+        }
+
+        &:hover .card-title{
+            font-weight: 500;
+            scale: 1.1;
+        }
+
+        &:hover ul{
+            scale: 1.1;
+        }
+
+        &:hover .button.apex{
+            @include mixins.hover-button(variaveis.$text-color-blue);
+        }
+        
+        &:hover .card.apex:hover .icon{
+            background-color: variaveis.$text-color-blue;
+        }
+
+        &:hover .button.oxar{
+            @include mixins.hover-button(variaveis.$text-color-green)
+        }
+
+        &:hover .button.grafana{
+            @include mixins.hover-button(variaveis.$text-color-red)
+        }
+
+    }
+}

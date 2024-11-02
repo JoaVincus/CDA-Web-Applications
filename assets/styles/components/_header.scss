@@ -1,13 +1,13 @@
 @use '../abstract/mixins';
 @use '../abstract/variaveis';
 
-li {
+
+nav li {
     transition: 0.3s;
-    @include mixins.line-bottom(transparent);
-    
+    @include mixins.line-bottom(transparent);   
 }
 
-li:hover {
+nav li:hover {
     cursor: pointer;
     @include mixins.line-bottom(variaveis.$cor-blue)
 }
@@ -15,3 +15,29 @@ li:hover {
 .bg-size-button{
     @include mixins.bg('../../assets/img/search.svg', center, 40%);
 }
+
+.intranet {
+    gap: 20px;
+    @include mixins.flex(space-between, center);
+}
+
+.intranet .opções .opções__item {
+    @include mixins.flex(center, center);
+  }
+
+.intranet .opções .opções__botão:checked ~ .lista-menu {
+    display: block;
+  }
+
+
+.list{
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 5px 0px;
+
+    &:hover{
+        color: white;
+    }
+  }
+

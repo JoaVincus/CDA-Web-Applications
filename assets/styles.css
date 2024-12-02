@@ -1,0 +1,247 @@
+@charset "UTF-8";
+* {
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+input::placeholder {
+  color: #888; 
+  font-style: italic; 
+  font-size: 14px; 
+}
+
+header nav li {
+  transition: 1ms ease-in-out;
+  border-bottom: 1px solid transparent;
+}
+
+header nav li:hover {
+  cursor: pointer;
+}
+
+header nav li:hover hr {
+  animation: hr 780ms ease forwards;
+}
+
+header hr {
+  margin: auto;
+  border: none;
+  border-bottom: 2px solid #00346F;
+  width: 0px;
+}
+
+@keyframes hr {100% {width: 100%;}}
+
+header .intranet {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  header .intranet {
+    display: none;
+  }
+}
+
+header .opções__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header .opções__botão:checked ~ .lista-menu {
+  display: block;
+}
+
+header .list {
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 5px 0px;
+}
+
+header .list:hover {
+  color: white;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 80px 50px -30px 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+    margin: 80px 35px -30px 30px;
+  }
+}
+
+.cards h3 {
+  font-size: 1rem;
+  margin: 20px 0px;
+}
+
+.cards span,
+.cards ul {
+  font-size: 16px;
+  max-width: 300px;
+}
+
+.cards span {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.cards ul {
+  transition: 0.3s ease-in-out;
+  height: 10px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.cards.cards:has(.card:hover) .card:not(:hover) {
+  opacity: 0.8;
+  scale: 0.97;
+}
+
+.cards .icon.APEX {
+  background-image: url(../assets/img/Icon_Apex.png);
+  background-size: 70%;
+}
+
+.cards .APEX:hover .icon.APEX {
+  border: 1px solid #00346F;
+}
+
+.cards .icon.OXAR {
+  background-image: url(../assets/img/Icon_Intranet.png);
+  background-size: 95%;
+}
+
+.cards .Internet:hover .icon .OXAR {
+  background-color: #008F20;
+}
+
+.cards .icon.Internet {
+  background-image: url(../assets/img/Icon_Internet.png);
+  background-size: 85%;
+}
+
+.cards .Internet:hover .icon .Internet {
+  background-color: #FF0013;
+}
+
+.cards .card.APEX:hover {
+  border: 1px solid #00346F;
+}
+
+.cards .card.OXAR:hover {
+  border: 1px solid #FF0013;
+}
+
+.cards .card.Internet:hover {
+  border: 1px solid #FFCC00;
+}
+
+.cards .card {
+  border: 1px solid #ccc;
+  transition: 0.4s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding: 2rem;
+  border-radius: 15px;
+  min-height: 380px;
+  min-width: 350px;
+  transition: 400ms;
+}
+
+.cards .card .card-title {
+  min-width: 300px;
+}
+
+.cards .card .icon {
+  transition: 0.3s ease-in-out;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 10px;
+  border: solid 1px #ccc;
+  border-radius: 10px;
+  min-height: 75px;
+  width: 75px;
+}
+
+.cards .card .button {
+  opacity: 0.9;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  border: 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 70%;
+  cursor: pointer;
+  font-size: 80%;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.cards .card:hover {
+  transform: scale(102%);
+}
+
+.cards .card:hover .card-title {
+  scale: 1;
+}
+
+.cards .card:hover ul {
+  scale: 1.1;
+}
+
+.cards .card:hover .icon.APEX{
+  border: 1px solid #00346F;
+}
+
+.cards .card:hover .icon.OXAR{
+  border: 1px solid #FF0013;
+}
+
+.cards .card:hover .icon.Internet{
+  border: 1px solid #008F20;
+}
+
+.cards .card:hover .button.APEX {
+  border: 1px solid #00346F;
+}
+
+.cards .card:hover .button.Internet {
+  border: 1px solid #008F20;
+}
+
+.cards .card:hover .button.OXAR {
+  border: 1px solid #FF0013;
+}
+
+.cards .card .button.APEX:hover {
+  color: white;
+  background-color: #00346F;
+}
+
+.cards .card .button.OXAR:hover {
+  color: white;
+  background-color: #FF0013;
+}
+
+.cards .card .button.Internet:hover {
+  color: white;
+  background-color: #008F20;
+}

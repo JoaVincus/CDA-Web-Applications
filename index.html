@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDA - Web Aplicações</title>
+    <link rel="shortcut icon" type="png" href="./assets/img/logomarca.png">
+    <link rel="stylesheet" href="./assets/styles.css">
+    <script src="./assets/scripts/endpoint.js" defer></script>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        azul: {
+                            claro: '#C5DFFF',
+                            escuro: '#00346F',
+                            hover: '#1057B0'
+                        },
+                        verde: '#259F3F',
+                        vermelho: '#e4000f',
+                        header: '#FFFFFF',
+                        body: '#FFFFFC',
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif']
+                    },
+                    backgroundImage: {
+                    'lupa': "url('/assets/img/search.png')",
+                    'footer-texture': "url('/img/footer-texture.png')",
+                    }
+                }
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <header class="flex bg-header justify-between sticky p-4 items-center justify-center top-0 z-10 sticky w-full mb-16">
+        <div class="flex">
+            <img class="ml-2" width="100" src="./assets/img/logo_cdadistribuidora.png" alt="Logo da CDA-Distribuidora">
+        </div>
+
+        <div class=" absolute left-0 ml-44">
+            <nav class="text-azul-escuro">
+                <ul class="flex gap-10">
+                    <li><a href="#apex">APEX</a><hr></li>
+                    <li><a href="#intranet">INTRANET</a><hr class="border-vermelho"></li>
+                    <li><a href="#internet">INTERNET</a><hr class="border-verde"></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="mr-10">
+            <div class="intranet right-1 top-4 absolute">
+                <ul class="opções w-32">
+                    <input type="checkbox" id="opções-menu" class="opções__botão hidden">
+                    <label for="opções-menu" class="opções__rotulo">
+                        <li class="opções__item cursor-pointer uppercase p-1 text-body border-azul-escuro rounded"><p class="text-center pl-2 text-azul-escuro">Suporte</p></li>
+                    </label>
+                    <ul class="text-center lista-menu hidden">
+                        <li class="list bg-body hover:bg-azul-escuro border border-azul-escuro border-b-0 hover:border-transparent"><a href="https://cdanatal.zendesk.com" target="_blank">Zendesk</a></li>
+                        <li class="list bg-body hover:bg-azul-escuro border border-azul-escuro hover:border-transparent"><a href="https://cdanatal.atlassian.net/wiki/home" target="_blank" >Documentação</a></li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex justify-center my-14">
+        <label class="text-sm font-bold text-gray-700" for="search"></label>
+        <input class="pl-5 text-sm py-3 shadow w-3/6 focus:outline-none rounded-3xl border hover:border-azul-claro hover:ring-1 hover:ring-azul-escuro focus:border-azul-escuro focus:ring-1 focus:ring-azul-escuro" id="search" type="text" placeholder="Digite a aplicação desejada" id="filter">
+        <ul id="listApplications"></ul>
+    </div>
+
+    <main class="aplicacoes">
+        <section class="cards" id="apex"></section>
+        <section class="cards" id="intranet"></section>
+        <section class="cards" id="internet"></section>
+    </main>
+
+
+    <footer class="pt-30 bg-azul-escuro">
+    </footer>
+</body>
+
+</html>

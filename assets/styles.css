@@ -12,6 +12,10 @@ input::placeholder {
   font-size: 14px; 
 }
 
+input:focus ~ .icon-lupa{
+  opacity: 100;
+}
+
 header nav li {
   transition: 1ms ease-in-out;
   border-bottom: 1px solid transparent;
@@ -244,4 +248,13 @@ header .list:hover {
 .cards .card .button.Internet:hover {
   color: white;
   background-color: #008F20;
+}
+
+.icon-lupa{
+  margin-left: -47%;
+}
+
+.icon-lupa:hover{
+  opacity: 100;
+  cursor: pointer;
 }

@@ -6,7 +6,9 @@
     <title>CDA - Web Aplicações</title>
     <link rel="shortcut icon" type="png" href="./assets/img/logomarca.png">
     <link rel="stylesheet" href="./assets/styles.css">
+
     <script src="./assets/scripts/endpoint.js" defer></script>
+    <script src="./assets/scripts/filter.js" defer></script>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -40,7 +42,7 @@
 <body>
     <header class="flex bg-header justify-between sticky p-4 items-center justify-center top-0 z-10 sticky w-full mb-16">
         <div class="flex">
-            <img class="ml-2" width="100" src="./assets/img/logo_cdadistribuidora.png" alt="Logo da CDA-Distribuidora">
+            <img class="ml-2" width="90" src="./assets/img/logo_cdadistribuidora.png" alt="Logo da CDA-Distribuidora">
         </div>
 
         <div class=" absolute left-0 ml-44">
@@ -54,25 +56,38 @@
         </div>
 
         <div class="mr-10">
-            <div class="intranet right-1 top-4 absolute">
+            <img src="./assets/img/info-circle.svg" width="25" class="hover:cursor-pointer">
+            <!-- <div class="intranet right-1 top-4 absolute">
                 <ul class="opções w-32">
                     <input type="checkbox" id="opções-menu" class="opções__botão hidden">
                     <label for="opções-menu" class="opções__rotulo">
-                        <li class="opções__item cursor-pointer uppercase p-1 text-body border-azul-escuro rounded"><p class="text-center pl-2 text-azul-escuro">Suporte</p></li>
+                        <li class="opções__item cursor-pointer uppercase p-1 text-body border-azul-escuro rounded"><p class="opacity-75 px-3 py-1 text-center text-azul-escuro border-2 border rounded-md hover:border-azul-escuro hover:opacity-100 duration-500 my--5 box">Suporte</p></li>
                     </label>
                     <ul class="text-center lista-menu hidden">
                         <li class="list bg-body hover:bg-azul-escuro border border-azul-escuro border-b-0 hover:border-transparent"><a href="https://cdanatal.zendesk.com" target="_blank">Zendesk</a></li>
-                        <li class="list bg-body hover:bg-azul-escuro border border-azul-escuro hover:border-transparent"><a href="https://cdanatal.atlassian.net/wiki/home" target="_blank" >Documentação</a></li>
+                        <li class="list bg-body hover:bg-azul-escuro border border-azul-escuro hover:border-transparent"><a href="https://cdanatal.atlassian.net/wiki/home" target="_blank">Documentação</a></li>
                     </ul>
                 </ul>
-            </div>
+            </div> -->
         </div>
     </header>
 
     <div class="flex justify-center my-14">
         <label class="text-sm font-bold text-gray-700" for="search"></label>
-        <input class="pl-5 text-sm py-3 shadow w-3/6 focus:outline-none rounded-3xl border hover:border-azul-claro hover:ring-1 hover:ring-azul-escuro focus:border-azul-escuro focus:ring-1 focus:ring-azul-escuro" id="search" type="text" placeholder="Digite a aplicação desejada" id="filter">
+        <input onkeyup="filtrar()" id="inputBusca" class="relative pl-12 text-sm py-3 shadow w-3/6 focus:outline-none rounded-3xl border hover:border-azul-claro hover:ring-1 hover:ring-azul-escuro focus:border-azul-escuro focus:ring-1 focus:ring-azul-escuro" id="search" type="text" placeholder="Digite a aplicação desejada" id="filter">
         <ul id="listApplications"></ul>
+        <img src="./assets/img/search.png" class="absolute my-3 my-3.5 center opacity-60 icon-lupa duration-300" width="18">
+    </div>
+
+    <div class="buscar">
+        <ul class="listaProdutos">
+            <!-- <li>
+                <a href="#">
+                    <img src="./assets/img/Icon_Apex.png" width="50">
+                    <span class="item-name">BBns</span>
+                </a>
+            </li> -->
+        </ul>
     </div>
 
     <main class="aplicacoes">
@@ -82,7 +97,7 @@
     </main>
 
 
-    <footer class="pt-30 bg-azul-escuro">
+    <footer class="p-28">
     </footer>
 </body>
 

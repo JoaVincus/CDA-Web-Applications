@@ -1,0 +1,82 @@
+input::placeholder {
+    color: #888; 
+    font-style: italic; 
+    font-size: 14px; 
+  }
+  
+  input:focus ~ .icon-lupa{
+    opacity: 100;
+  }
+  
+  .icon-lupa{
+    margin-left: -47%;
+  }
+  
+  .icon-lupa:hover{
+    opacity: 100;
+    cursor: pointer;
+  }
+  
+  .opções__botão:checked .box{
+    border: 1px solid red;
+  }
+  
+  .buscar{
+    z-index: 1;
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+      background-color: #008F20;
+  }
+  
+  .listaProdutos{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    position: absolute;
+    flex-direction: column;
+    top: -55px;
+    margin-left: 50%;
+  }
+  
+  .listaProdutos li{
+    width: 50%;
+  
+  }
+  
+  .listaProdutos li a{
+    transition: 0.1s;
+    border-radius: 5px;
+    /* position: absolute; */
+    display: flex;
+    align-items: center;
+    
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    padding: 2px;
+    height: 40px;
+  }
+  
+  .listaProdutos li a:hover{
+    border: 1px solid #00346F;
+    background-color: #f1f1f1;
+  }
+  
+  .item-name{
+    margin-left: 10px;
+  }
+  
+  .listaProdutos li a img{
+    margin-left: 15px;
+    width: 50px;
+  }

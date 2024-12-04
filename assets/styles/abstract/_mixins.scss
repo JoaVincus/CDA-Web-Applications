@@ -1,0 +1,14 @@
+@mixin border($color){
+    border: 1px solid $color;
+}
+
+@mixin flex-center(){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin bg-img($url, $size){
+    background-image: url($url);
+    background-size: $size;
+}

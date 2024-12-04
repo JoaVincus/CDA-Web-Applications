@@ -1,0 +1,168 @@
+@use "../abstract/variaveis";
+@use "../abstract/mixins";
+
+.cards {
+  @include mixins.flex-center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 80px 50px -30px 50px;
+
+  h3 {
+    font-size: 1rem;
+    margin: 20px 0px;
+  }
+
+  span,
+  ul {
+    font-size: 16px;
+    max-width: 300px;
+  }
+
+  span {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+  }
+
+  ul {
+    transition: 0.3s ease-in-out;
+    height: 10px;
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+
+  .icon.APEX {
+    @include mixins.bg-img("/assets/img/Icon_Apex.png", 70%);
+  }
+
+  .icon.OXAR {
+    @include mixins.bg-img("/assets/img/Icon_Intranet.png", 95%);
+  }
+
+  .icon.Internet {
+    @include mixins.bg-img("/assets/img/Icon_Internet.png", 85%);
+  }
+
+  .Internet:hover .icon .OXAR {
+    background-color: variaveis.$cor-secundaria;
+  }
+
+  .Internet:hover .icon .Internet {
+    background-color: variaveis.$cor-terciaria;
+  }
+
+  .card.APEX:hover {
+    @include mixins.border(variaveis.$cor-primaria);
+  }
+
+  .card.OXAR:hover {
+    @include mixins.border(variaveis.$cor-terciaria);
+  }
+
+  .card.Internet:hover {
+    @include mixins.border(variaveis.$cor-quaternaria);
+  }
+
+  &:has(.card:hover) .card:not(:hover) {
+    opacity: 0.8;
+    scale: 0.97;
+  }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    margin: 80px 35px -30px 30px;
+  }
+
+  .card {
+    border: 1px solid #ccc;
+    transition: 0.4s ease-in-out;
+    @include mixins.flex-center;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+    border-radius: 15px;
+    min-height: 380px;
+    min-width: 350px;
+    transition: 400ms;
+
+    .icon {
+      transition: 0.3s ease-in-out;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 10px;
+      border: solid 1px #ccc;
+      border-radius: 10px;
+      min-height: 75px;
+      width: 75px;
+    }
+
+    .card-title {
+      min-width: 300px;
+    }
+
+    .button {
+      opacity: 0.9;
+      padding: 0.5rem 1rem;
+      text-transform: uppercase;
+      border: 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      width: 70%;
+      cursor: pointer;
+      font-size: 80%;
+      font-weight: 500;
+      transition: 0.3s ease;
+    }
+
+    &:hover {
+      transform: scale(102%);
+    }
+
+    &:hover .card-title {
+      scale: 1;
+    }
+
+    &:hover ul {
+      scale: 1.1;
+    }
+
+    &:hover .icon.APEX {
+      @include mixins.border(variaveis.$cor-primaria);
+    }
+
+    &:hover .icon.OXAR {
+      @include mixins.border(variaveis.$cor-secundaria);
+    }
+
+    &:hover .icon.Internet {
+      @include mixins.border(variaveis.$cor-secundaria);
+    }
+
+    :hover .button.APEX {
+      @include mixins.border(variaveis.$cor-primaria);
+    }
+
+    &:hover .button.Internet {
+      @include mixins.border(variaveis.$cor-secundaria);
+    }
+
+    &:hover .button.OXAR {
+      @include mixins.border(variaveis.$cor-terciaria);
+    }
+
+    .button.APEX:hover {
+      color: white;
+      background-color: variaveis.$cor-primaria;
+    }
+
+    .button.OXAR:hover {
+      color: white;
+      background-color: variaveis.$cor-terciaria;
+    }
+
+    .button.Internet:hover {
+      color: white;
+      background-color: variaveis.$cor-secundaria;
+    }
+  }
+}

@@ -41,7 +41,7 @@ const endpointDaAPI = fetch('http://192.168.1.91:8080/ords/cda/cda-links/links')
         sectionApex.appendChild(card)
       } else if (item.categoria === 'Internet') {
         sectionInternet.appendChild(card)
-      } else if (item.categoria === 'OXAR') {
+      } else if (item.categoria === 'Intranet') {
         sectionIntranet.appendChild(card)
       } else {
         sectionCards.appendChild(card)

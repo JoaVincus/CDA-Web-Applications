@@ -35,7 +35,7 @@
     @include mixins.bg-img("/assets/img/Icon_Apex.png", 70%);
   }
 
-  .icon.OXAR {
+  .icon.Intranet {
     @include mixins.bg-img("/assets/img/Icon_Intranet.png", 95%);
   }
 
@@ -43,8 +43,8 @@
     @include mixins.bg-img("/assets/img/Icon_Internet.png", 85%);
   }
 
-  .Internet:hover .icon .OXAR {
-    background-color: variaveis.$cor-secundaria;
+  .Internet:hover .icon .Intranet {
+    background-color: variaveis.$cor-terciaria;
   }
 
   .Internet:hover .icon .Internet {
@@ -55,7 +55,7 @@
     @include mixins.border(variaveis.$cor-primaria);
   }
 
-  .card.OXAR:hover {
+  .card.Intranet:hover {
     @include mixins.border(variaveis.$cor-terciaria);
   }
 
@@ -130,15 +130,15 @@
       @include mixins.border(variaveis.$cor-primaria);
     }
 
-    &:hover .icon.OXAR {
-      @include mixins.border(variaveis.$cor-secundaria);
+    &:hover .icon.Intranet {
+      @include mixins.border(variaveis.$cor-terciaria);
     }
 
     &:hover .icon.Internet {
       @include mixins.border(variaveis.$cor-secundaria);
     }
 
-    :hover .button.APEX {
+    &:hover .button.APEX {
       @include mixins.border(variaveis.$cor-primaria);
     }
 
@@ -146,7 +146,7 @@
       @include mixins.border(variaveis.$cor-secundaria);
     }
 
-    &:hover .button.OXAR {
+    &:hover .button.Intranet {
       @include mixins.border(variaveis.$cor-terciaria);
     }
 
@@ -155,7 +155,7 @@
       background-color: variaveis.$cor-primaria;
     }
 
-    .button.OXAR:hover {
+    .button.Intranet:hover {
       color: white;
       background-color: variaveis.$cor-terciaria;
     }

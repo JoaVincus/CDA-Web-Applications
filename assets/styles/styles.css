@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 * {
   font-family: "Poppins", sans-serif;
@@ -9,20 +8,17 @@
   scroll-behavior: smooth;
 }
 
-header nav li {
-  transition: 1ms ease-in-out;
+nav li {
+  transition: 200ms ease-in-out;
   border-bottom: 1px solid transparent;
 }
-
-header nav li:hover {
+nav li:hover {
   cursor: pointer;
 }
-
-header nav li:hover hr {
+nav li:hover hr {
   animation: hr 780ms ease forwards;
 }
-
-header hr {
+nav li hr {
   margin: auto;
   border: none;
   border-bottom: 2px solid #00346F;
@@ -39,31 +35,10 @@ header .intranet {
   justify-content: space-between;
   align-items: center;
 }
-
 @media screen and (max-width: 768px) {
   header .intranet {
     display: none;
   }
-}
-header .opções__item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-header .opções__botão:checked ~ .lista-menu {
-  display: block;
-}
-
-header .list {
-  transition: 0.3s ease-in-out;
-  cursor: pointer;
-  border-radius: 4px;
-  padding: 5px 0px;
-}
-
-header .list:hover {
-  color: white;
 }
 
 input::-moz-placeholder {
@@ -78,21 +53,12 @@ input::placeholder {
   font-size: 14px;
 }
 
-input:focus ~ .icon-lupa {
-  opacity: 100;
-}
-
 .icon-lupa {
   margin-left: -47%;
 }
-
 .icon-lupa:hover {
   opacity: 100;
   cursor: pointer;
-}
-
-.opções__botão:checked .box {
-  border: 1px solid red;
 }
 
 .buscar {
@@ -106,7 +72,7 @@ input:focus ~ .icon-lupa {
   background-color: #008F20;
 }
 
-.listaProdutos {
+.listaApplications {
   display: none;
   align-items: center;
   justify-content: center;
@@ -119,12 +85,10 @@ input:focus ~ .icon-lupa {
   top: -55px;
   margin-left: 50%;
 }
-
-.listaProdutos li {
+.listaApplications li {
   width: 50%;
 }
-
-.listaProdutos li a {
+.listaApplications li a {
   transition: 0.1s;
   border-radius: 5px;
   /* position: absolute; */
@@ -138,17 +102,11 @@ input:focus ~ .icon-lupa {
   padding: 2px;
   height: 40px;
 }
-
-.listaProdutos li a:hover {
+.listaApplications li a:hover {
   border: 1px solid #00346F;
   background-color: #f1f1f1;
 }
-
-.item-name {
-  margin-left: 10px;
-}
-
-.listaProdutos li a img {
+.listaApplications img {
   margin-left: 15px;
   width: 50px;
 }
@@ -161,81 +119,63 @@ input:focus ~ .icon-lupa {
   gap: 30px;
   margin: 80px 50px -30px 50px;
 }
-
-@media screen and (max-width: 768px) {
-  .cards {
-    flex-direction: column;
-    margin: 80px 35px -30px 30px;
-  }
-}
 .cards h3 {
   font-size: 1rem;
   margin: 20px 0px;
 }
-
 .cards span,
 .cards ul {
   font-size: 16px;
   max-width: 300px;
 }
-
 .cards span {
   margin-top: 20px;
   margin-bottom: 20px;
   font-size: 1rem;
 }
-
 .cards ul {
   transition: 0.3s ease-in-out;
   height: 10px;
   font-weight: 400;
   margin-bottom: 20px;
 }
-
-.cards.cards:has(.card:hover) .card:not(:hover) {
-  opacity: 0.8;
-  scale: 0.97;
-}
-
 .cards .icon.APEX {
-  background-image: "../assets/img/Icon_Apex.png";
+  background-image: url("/assets/img/Icon_Apex.png");
   background-size: 70%;
 }
-
-.cards .APEX:hover .icon.APEX {
-  border: 1px solid #00346F;
-}
-
 .cards .icon.OXAR {
-  background-image: "../assets/img/Icon_Intranet.png";
+  background-image: url("/assets/img/Icon_Intranet.png");
   background-size: 95%;
 }
-
+.cards .icon.Internet {
+  background-image: url("/assets/img/Icon_Internet.png");
+  background-size: 85%;
+}
 .cards .Internet:hover .icon .OXAR {
   background-color: #008F20;
 }
-
-.cards .icon.Internet {
-  background-image: "../assets/img/Icon_Internet.png";
-  background-size: 85%;
-}
-
 .cards .Internet:hover .icon .Internet {
   background-color: #FF0013;
 }
-
 .cards .card.APEX:hover {
   border: 1px solid #00346F;
 }
-
 .cards .card.OXAR:hover {
   border: 1px solid #FF0013;
 }
-
 .cards .card.Internet:hover {
   border: 1px solid #FFCC00;
 }
-
+.cards:has(.card:hover) .card:not(:hover) {
+  opacity: 0.8;
+  scale: 0.97;
+}
+@media screen and (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+    margin: 80px 35px -30px 30px;
+  }
+}
 .cards .card {
   border: 1px solid #ccc;
   transition: 0.4s ease-in-out;
@@ -250,11 +190,6 @@ input:focus ~ .icon-lupa {
   min-width: 350px;
   transition: 400ms;
 }
-
-.cards .card .card-title {
-  min-width: 300px;
-}
-
 .cards .card .icon {
   transition: 0.3s ease-in-out;
   background-position: center;
@@ -265,7 +200,9 @@ input:focus ~ .icon-lupa {
   min-height: 75px;
   width: 75px;
 }
-
+.cards .card .card-title {
+  min-width: 300px;
+}
 .cards .card .button {
   opacity: 0.9;
   padding: 0.5rem 1rem;
@@ -279,53 +216,41 @@ input:focus ~ .icon-lupa {
   font-weight: 500;
   transition: 0.3s ease;
 }
-
 .cards .card:hover {
   transform: scale(102%);
 }
-
 .cards .card:hover .card-title {
   scale: 1;
 }
-
 .cards .card:hover ul {
   scale: 1.1;
 }
-
 .cards .card:hover .icon.APEX {
   border: 1px solid #00346F;
 }
-
 .cards .card:hover .icon.OXAR {
   border: 1px solid #008F20;
 }
-
 .cards .card:hover .icon.Internet {
   border: 1px solid #008F20;
 }
-
-.cards .card:hover .button.APEX {
+.cards .card :hover .button.APEX {
   border: 1px solid #00346F;
 }
-
 .cards .card:hover .button.Internet {
   border: 1px solid #008F20;
 }
-
 .cards .card:hover .button.OXAR {
   border: 1px solid #FF0013;
 }
-
 .cards .card .button.APEX:hover {
   color: white;
   background-color: #00346F;
 }
-
 .cards .card .button.OXAR:hover {
   color: white;
   background-color: #FF0013;
 }
-
 .cards .card .button.Internet:hover {
   color: white;
   background-color: #008F20;

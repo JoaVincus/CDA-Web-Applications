@@ -1,54 +1,30 @@
-header nav li {
-    transition: 1ms ease-in-out;
+ nav li {
+    transition: 200ms ease-in-out;
     border-bottom: 1px solid transparent;
+    
+    &:hover {
+    cursor: pointer;}
+
+    &:hover hr {
+      animation: hr 780ms ease forwards;}
+
+      hr {
+        margin: auto;
+        border: none;
+        border-bottom: 2px solid #00346F;
+        width: 0px;
+      }
   }
-  
-  header nav li:hover {
-    cursor: pointer;
-  }
-  
-  header nav li:hover hr {
-    animation: hr 780ms ease forwards;
-  }
-  
-  header hr {
-    margin: auto;
-    border: none;
-    border-bottom: 2px solid #00346F;
-    width: 0px;
-  }
-  
+
   @keyframes hr {100% {width: 100%;}}
   
   header .intranet {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  
-  @media screen and (max-width: 768px) {
-    header .intranet {
+
+    @media screen and (max-width: 768px) {
       display: none;
     }
   }
   
-  header .opções__item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  header .opções__botão:checked ~ .lista-menu {
-    display: block;
-  }
-  
-  header .list {
-    transition: 0.3s ease-in-out;
-    cursor: pointer;
-    border-radius: 4px;
-    padding: 5px 0px;
-  }
-  
-  header .list:hover {
-    color: white;
-  }

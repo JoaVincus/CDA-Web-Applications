@@ -9,6 +9,6 @@
 }
 
 @mixin bg-img($url, $size){
-    background-image: $url;
+    background-image: url($url);
     background-size: $size;
 }

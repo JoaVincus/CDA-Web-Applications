@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CDA - Web Aplicações</title>
+    <title>CDA - Aplicações</title>
     <link rel="shortcut icon" type="png" href="./assets/img/logomarca.png">
     <link rel="stylesheet" href="./assets/styles/styles.css">
-
+    
     <script src="./assets/script/endpoint.js" defer></script>
     <script src="./assets/script/filter.js" defer></script>
     
@@ -26,13 +26,6 @@
                         header: '#FFFFFF',
                         body: '#FFFFFC',
                     },
-                    fontFamily: {
-                        inter: ['Inter', 'sans-serif']
-                    },
-                    backgroundImage: {
-                    'lupa': "url('/assets/img/search.png')",
-                    'footer-texture': "url('/img/footer-texture.png')",
-                    }
                 }
             }
         }
@@ -54,22 +47,6 @@
                 </ul>
             </nav>
         </div>
-
-        <div class="mr-10">
-            <img src="./assets/img/info-circle.svg" width="25" class="hover:cursor-pointer">
-            <!-- <div class="intranet right-1 top-4 absolute">
-                <ul class="opções w-32">
-                    <input type="checkbox" id="opções-menu" class="opções__botão hidden">
-                    <label for="opções-menu" class="opções__rotulo">
-                        <li class="opções__item cursor-pointer uppercase p-1 text-body border-azul-escuro rounded"><p class="opacity-75 px-3 py-1 text-center text-azul-escuro border-2 border rounded-md hover:border-azul-escuro hover:opacity-100 duration-500 my--5 box">Suporte</p></li>
-                    </label>
-                    <ul class="text-center lista-menu hidden">
-                        <li class="list bg-body hover:bg-azul-escuro border border-azul-escuro border-b-0 hover:border-transparent"><a href="https://cdanatal.zendesk.com" target="_blank">Zendesk</a></li>
-                        <li class="list bg-body hover:bg-azul-escuro border border-azul-escuro hover:border-transparent"><a href="https://cdanatal.atlassian.net/wiki/home" target="_blank">Documentação</a></li>
-                    </ul>
-                </ul>
-            </div> -->
-        </div>
     </header>
 
     <div class="flex justify-center my-14">
@@ -80,14 +57,7 @@
     </div>
 
     <div class="buscar">
-        <ul class="listaProdutos">
-            <!-- <li>
-                <a href="#">
-                    <img src="./assets/img/Icon_Apex.png" width="50">
-                    <span class="item-name">BBns</span>
-                </a>
-            </li> -->
-        </ul>
+        <ul class="listaApplications"></ul>
     </div>
 
     <main class="aplicacoes">
@@ -95,7 +65,6 @@
         <section class="cards" id="intranet"></section>
         <section class="cards" id="internet"></section>
     </main>
-
 
     <footer class="p-28">
     </footer>

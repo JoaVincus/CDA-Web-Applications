@@ -2,7 +2,7 @@ fetch('http://192.168.1.91:8080/ords/cda/cda-links/links')
             .then(res=>res.json())
             .then(json=> 
             {
-                const ul = document.querySelector('.listaProdutos');
+                const ul = document.querySelector('.listaApplications');
                 json.items.forEach((item) => {
                     const li = document.createElement("li");
                     li.innerHTML = `
@@ -27,7 +27,7 @@ fetch('http://192.168.1.91:8080/ords/cda/cda-links/links')
 
                 //PEGAR OS ELEMENTOS HTML
                 input = document.getElementById('inputBusca');
-                ul = document.querySelector('.listaProdutos');
+                ul = document.querySelector('.listaApplications');
 
                 // FILTRO
                 filter = input.value.toUpperCase();
@@ -52,7 +52,7 @@ fetch('http://192.168.1.91:8080/ords/cda/cda-links/links')
                         //SE EXISTIR
                         if(span){
                             span.innerHTML = txtValue.replace(new RegExp(filter, "gi"), (match)=>{
-                                return "<strong>" + match + "</strong>";
+                                return "<strong style=color:#00346F;>" + match + "</strong>";
                             }) //substituir o conteúdo 
                         }
                     } else {
@@ -61,9 +61,20 @@ fetch('http://192.168.1.91:8080/ords/cda/cda-links/links')
                     }
                 }
 
+                document.addEventListener('click', function(event) {
+                    // Verifica se o clique ocorreu fora do conteúdo
+                    if (!input.contains(event.target)) {
+                        ul.style.display = "none";
+                    }
+                });
+
                 if (count === 0 || input.value === "") {
                     ul.style.display = "none";
                 } else {
                     ul.style.display = "block";
+                }
+
+                if (input.value === "") {
+                    ul.style.display = "none";
                 }
             }
